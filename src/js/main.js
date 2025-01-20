@@ -1,3 +1,7 @@
+const music = document.getElementById('background-music')
+const musicBtn = document.getElementById('music-btn')
+const musicIcon = document.getElementById('music-icon')
+
 // toggle background active
 const slideNavigator = (name) => {
   let slides = document.querySelectorAll('.bg-slide')
@@ -22,6 +26,14 @@ window.addEventListener('load', () => {
       slideNavigator(this.getAttribute('data-target'))
     })
   })
+  music
+    .play()
+    .then(() => {
+      musicIcon.setAttribute('name', 'pause-outline')
+    })
+    .catch(() => {
+      musicIcon.setAttribute('name', 'play-outline')
+    })
 })
 
 // activate sections
@@ -79,17 +91,15 @@ const toggleMenu = () => {
   navMobile.classList.toggle('active')
 }
 
-const music = document.getElementById('background-music')
-const musicBtn = document.getElementById('music-btn')
-const musicIcon = document.getElementById('music-icon')
-
 const toggleMusic = () => {
   if (music.paused) {
-    music.play()
-    musicIcon.setAttribute('name', 'pause-outline')
+    music.play().then(() => {
+      musicIcon.setAttribute('name', 'pause-outline')
+    })
   } else {
-    music.pause()
-    musicIcon.setAttribute('name', 'play-outline')
+    music.pause().then(() => {
+      musicIcon.setAttribute('name', 'play-outline')
+    })
   }
 }
 

@@ -794,23 +794,17 @@ section p {
   margin-bottom: 0;
 }
 
-.portfolio .portfolio-item .portfolio-info .preview-link,
-.portfolio .portfolio-item .portfolio-info .details-link {
+.portfolio .portfolio-item .portfolio-info .preview-link {
   position: absolute;
-  right: 2.5rem;
+  right: 1rem;
   font-size: 1.5rem;
   top: calc(50% - 1.125rem);
   color: #fff;
   transition: 0.3s;
 }
 
-.portfolio .portfolio-item .portfolio-info .preview-link:hover,
-.portfolio .portfolio-item .portfolio-info .details-link:hover {
+.portfolio .portfolio-item .portfolio-info .preview-link:hover {
   color: #111111;
-}
-
-.portfolio .portfolio-item .portfolio-info .details-link {
-  right: 0.625rem;
 }
 
 .portfolio .portfolio-item:hover .portfolio-img img {
