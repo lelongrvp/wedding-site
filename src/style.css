@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 /* General Global Setting */
 * {
@@ -48,7 +48,7 @@
 body {
   position: relative;
   background: #ffffff;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
@@ -79,7 +79,7 @@ header.active {
 }
 
 .logo {
-  font-family: 'Great Vibes', cursive;
+  font-family: "Great Vibes", cursive;
   font-size: 2.5rem;
   color: #111111;
   letter-spacing: 0.125rem;
@@ -223,7 +223,7 @@ header.active {
 
 .banner::after {
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   left: 0;
   width: 100%;
@@ -262,7 +262,7 @@ header.active {
 }
 
 .bg-slide .content p {
-  font-family: 'Great Vibes', cursive;
+  font-family: "Great Vibes", cursive;
   font-weight: 200;
   font-size: 1.5em;
   letter-spacing: 0.0625rem;
@@ -376,7 +376,7 @@ header.active {
 
 .slide-loader::before {
   position: absolute;
-  content: '';
+  content: "";
   top: 50%;
   left: -70%;
   width: 6.25rem;
@@ -416,7 +416,7 @@ header.active {
 }
 
 .lead svg {
-  font-family: 'Great Vibes', cursive;
+  font-family: "Great Vibes", cursive;
   position: absolute;
   z-index: 1100;
   fill: currentColor;
@@ -523,7 +523,7 @@ section.section-show {
 }
 
 section h1 {
-  font-family: 'Great Vibes', cursive;
+  font-family: "Great Vibes", cursive;
   font-weight: 400;
   font-size: 4em;
   letter-spacing: 0.0625rem;
@@ -532,7 +532,7 @@ section h1 {
 }
 
 section h4 {
-  font-family: 'Great Vibes', cursive;
+  font-family: "Great Vibes", cursive;
   font-weight: 300;
   font-size: 2.5em;
   letter-spacing: 0.0625rem;
@@ -556,7 +556,7 @@ section p {
 
 .about::before {
   position: absolute;
-  content: '';
+  content: "";
   left: 50%;
   transform: translateX(-50%);
   top: 15.625rem;
@@ -595,7 +595,7 @@ section p {
 
 .section-btn::before {
   position: absolute;
-  content: '';
+  content: "";
   left: 0;
   bottom: -0.625rem;
   width: 85%;
@@ -623,7 +623,7 @@ section p {
 --------------------------------------------------------------*/
 .services::before {
   position: absolute;
-  content: '';
+  content: "";
   left: 50%;
   transform: translateX(-50%);
   top: 15.625rem;
@@ -685,7 +685,7 @@ section p {
 }
 
 .card .details::before {
-  content: '';
+  content: "";
   position: absolute;
   color: #ffffff;
   top: 0;
@@ -694,7 +694,7 @@ section p {
   height: 100%;
   box-sizing: border-box;
   padding: 1.25rem;
-  background: url('../images/bg-tree.png');
+  background: url("../images/bg-tree.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -738,7 +738,7 @@ section p {
 
 .portfolio #portfolio-filters li::before {
   position: absolute;
-  content: '';
+  content: "";
   left: 50%;
   transform: translateX(-50%);
   bottom: -0.3125rem;
@@ -894,7 +894,7 @@ section p {
   padding: 0.625rem 0.75rem;
 }
 
-.contact form button[type='submit'] {
+.contact form button[type="submit"] {
   background: var(--mocha-cream);
   border: 0;
   padding: 0.625rem 1.5rem;
@@ -904,7 +904,7 @@ section p {
   border: 0.0625rem solid var(--mocha-cream);
 }
 
-.contact form button[type='submit']:hover {
+.contact form button[type="submit"]:hover {
   background: #ffffff;
   color: var(--mocha-cream);
 }
@@ -1015,5 +1015,126 @@ section p {
   .section-bg-img {
     bottom: -31.25rem;
     right: 0rem;
+  }
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.contact .container {
+  position: relative;
+  width: auto; /* Allow dynamic width based on image */
+  height: auto; /* Allow dynamic height based on image */
+  max-width: 100%;
+  max-height: 110%;
+  overflow: hidden;
+  border: 5px solid var(--dusty-rose);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slideshow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+.slide img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* Navigation buttons */
+.contact .container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.contact .container button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
+
+ion-icon {
+  font-size: 24px;
+}
+
+/* Dots pagination */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--champagne);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--rich-espresso);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact .container {
+    width: auto;
+  }
+
+  .slide img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact .container {
+    width: auto;
+  }
+
+  .slide img {
+    max-width: 100%;
+    max-height: 100%;
   }
 }

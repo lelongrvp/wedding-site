@@ -1,112 +1,129 @@
-const music = document.getElementById('background-music')
-const musicBtn = document.getElementById('music-btn')
-const musicIcon = document.getElementById('music-icon')
-
 // toggle background active
 const slideNavigator = (name) => {
-  let slides = document.querySelectorAll('.bg-slide')
+  let slides = document.querySelectorAll(".bg-slide");
   slides.forEach((slide) => {
-    slide.classList.remove('active')
+    slide.classList.remove("active");
     if (slide.classList.contains(name)) {
-      slide.classList.add('active')
+      slide.classList.add("active");
     }
-  })
-}
+  });
+};
 
 // switch background
-window.addEventListener('load', () => {
-  const slideBtnList = document.querySelectorAll('.slide-btn')
+window.addEventListener("load", () => {
+  const slideBtnList = document.querySelectorAll(".slide-btn");
   slideBtnList.forEach((btn) => {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault()
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
       slideBtnList.forEach((el) => {
-        el.classList.remove('active')
-      })
-      this.classList.add('active')
-      slideNavigator(this.getAttribute('data-target'))
-    })
-  })
-  music
-    .play()
-    .then(() => {
-      musicIcon.setAttribute('name', 'pause-outline')
-    })
-    .catch(() => {
-      musicIcon.setAttribute('name', 'play-outline')
-    })
-})
+        el.classList.remove("active");
+      });
+      this.classList.add("active");
+      slideNavigator(this.getAttribute("data-target"));
+    });
+  });
+});
 
 // activate sections
 const sectionNavigator = (name) => {
-  let sections = document.querySelectorAll('section')
-  let header = document.querySelector('header')
+  let sections = document.querySelectorAll("section");
+  let header = document.querySelector("header");
   sections.forEach((section) => {
-    section.classList.remove('section-show')
+    section.classList.remove("section-show");
     if (section.classList.contains(name)) {
-      section.classList.add('section-show')
-      header.classList.add('active')
+      section.classList.add("section-show");
+      header.classList.add("active");
     }
-  })
-}
+  });
+};
 
 // navigation to sections
-window.addEventListener('load', () => {
-  const navList = document.querySelectorAll('.nav-btn')
+window.addEventListener("load", () => {
+  const navList = document.querySelectorAll(".nav-btn");
   navList.forEach((nav) => {
-    nav.addEventListener('click', function (e) {
-      e.preventDefault()
+    nav.addEventListener("click", function (e) {
+      e.preventDefault();
       navList.forEach((el) => {
-        el.classList.remove('active')
-      })
-      this.classList.add('active')
-      sectionNavigator(this.getAttribute('data-target'))
-      screen.width < 768 && toggleMenu()
-    })
-  })
-})
+        el.classList.remove("active");
+      });
+      this.classList.add("active");
+      sectionNavigator(this.getAttribute("data-target"));
+      screen.width < 768 && toggleMenu();
+    });
+  });
+});
 
 //initial navigation
 const initNavigation = () => {
-  const navList = document.querySelectorAll('.nav-btn')
+  const navList = document.querySelectorAll(".nav-btn");
   navList.forEach((el) => {
-    el.classList.remove('active')
-    if (el.getAttribute('data-target') === 'about') {
-      el.classList.add('active')
+    el.classList.remove("active");
+    if (el.getAttribute("data-target") === "about") {
+      el.classList.add("active");
     }
-  })
-  sectionNavigator('about')
-}
+  });
+  sectionNavigator("about");
+};
 
 // reset header to initial state
 const resetHeader = () => {
-  let header = document.querySelector('header')
-  header.classList.remove('active')
-}
+  let header = document.querySelector("header");
+  header.classList.remove("active");
+};
 
 // toggle menu
 const toggleMenu = () => {
-  const menu = document.querySelector('.menu')
-  const navMobile = document.querySelector('.nav-mobile')
-  menu.classList.toggle('active')
-  navMobile.classList.toggle('active')
-}
+  const menu = document.querySelector(".menu");
+  const navMobile = document.querySelector(".nav-mobile");
+  menu.classList.toggle("active");
+  navMobile.classList.toggle("active");
+};
 
-const toggleMusic = () => {
-  if (music.paused) {
-    music.play().then(() => {
-      musicIcon.setAttribute('name', 'pause-outline')
-    })
-  } else {
-    music.pause().then(() => {
-      musicIcon.setAttribute('name', 'play-outline')
-    })
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".slide");
+  const dots = document.querySelectorAll(".dot");
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      dots[i].classList.remove("active");
+      if (i === index) {
+        slide.classList.add("active");
+        dots[i].classList.add("active");
+      }
+    });
   }
-}
 
-musicBtn.addEventListener('mouseenter', () => {
-  musicBtn.classList.add('glow')
-})
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
 
-musicBtn.addEventListener('mouseleave', () => {
-  musicBtn.classList.remove('glow')
-})
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  document.getElementById("nextBtn").addEventListener("click", nextSlide);
+  document.getElementById("prevBtn").addEventListener("click", prevSlide);
+
+  // Dot click event
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentSlide = index;
+      showSlide(currentSlide);
+    });
+  });
+
+  // Initialize GLightbox
+  const lightbox = GLightbox({
+    selector: ".glightbox",
+    zoomable: true,
+    draggable: true,
+    touchNavigation: true,
+  });
+
+  // Show first slide initially
+  showSlide(currentSlide);
+});
