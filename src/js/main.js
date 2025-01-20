@@ -78,3 +78,25 @@ const toggleMenu = () => {
   menu.classList.toggle('active')
   navMobile.classList.toggle('active')
 }
+
+const music = document.getElementById('background-music')
+const musicBtn = document.getElementById('music-btn')
+const musicIcon = document.getElementById('music-icon')
+
+const toggleMusic = () => {
+  if (music.paused) {
+    music.play()
+    musicIcon.setAttribute('name', 'pause-outline')
+  } else {
+    music.pause()
+    musicIcon.setAttribute('name', 'play-outline')
+  }
+}
+
+musicBtn.addEventListener('mouseenter', () => {
+  musicBtn.classList.add('glow')
+})
+
+musicBtn.addEventListener('mouseleave', () => {
+  musicBtn.classList.remove('glow')
+})

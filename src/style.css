@@ -314,6 +314,7 @@ header.active {
 
 .circle.bg img {
   border-radius: 0;
+  object-fit: cover;
 }
 
 .circle.large img {
@@ -433,6 +434,62 @@ header.active {
   to {
     transform: rotateZ(360deg);
   }
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 223, 186, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 223, 186, 0.4);
+  }
+}
+
+#music-btn {
+  background-color: var(--soft-peach);
+  border: none;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2000;
+  animation: glowing 2s infinite ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#music-btn:hover {
+  background-color: var(--blush-pink);
+}
+
+/* Icon Styling */
+#music-icon {
+  color: var(--deep-charcoal);
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#music-icon {
+  color: var(--deep-charcoal);
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  vertical-align: middle;
 }
 
 /*--------------------------------------------------------------

@@ -20,6 +20,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
+    <button id="music-btn" onclick="toggleMusic()">
+      <ion-icon id="music-icon" name="play-outline"></ion-icon>
+    </button>
+
+    <!-- Add the audio element -->
+    <audio id="background-music" loop>
+      <source src="./src/asset/final_fantasy.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
     <!-- Header -->
     <header>
       <a href="/" class="logo">Danh Quyết & Thu Hà</a>
@@ -27,6 +36,7 @@
         ><ion-icon class="open" name="menu-outline"></ion-icon
         ><ion-icon class="close" name="close-outline"></ion-icon>
       </a>
+
       <ul class="nav">
         <li>
           <a class="nav-btn" href="/" onclick="resetHeader();"
@@ -47,6 +57,7 @@
         </li>
       </ul>
     </header>
+
     <!-- Mobile Navigation -->
     <ul class="nav-mobile">
       <li>
@@ -82,11 +93,11 @@
           </p>
         </div>
         <div class="circle bg">
-          <img src="./src/asset/wedding-1.jpg" alt="" />
+          <img src="./src/asset/full1.jpg" alt="" />
           <div class="circle large">
-            <img src="./src/asset/wedding-1.jpg" alt="" />
+            <img src="./src/asset/full1.jpg" alt="" />
             <div class="circle small">
-              <img src="./src/asset/wedding-1.jpg" alt="" />
+              <img src="./src/asset/full1.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -104,11 +115,11 @@
           </p>
         </div>
         <div class="circle bg">
-          <img src="./src/asset/wedding-2.jpg" alt="" />
+          <img src="./src/asset/full2.jpg" alt="" />
           <div class="circle large">
-            <img src="./src/asset/wedding-2.jpg" alt="" />
+            <img src="./src/asset/full2.jpg" alt="" />
             <div class="circle small">
-              <img src="./src/asset/wedding-2.jpg" alt="" />
+              <img src="./src/asset/full2.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -126,11 +137,11 @@
           </p>
         </div>
         <div class="circle bg">
-          <img src="./src/asset/wedding-3.jpg" alt="" />
+          <img src="./src/asset/full3.jpg" alt="" />
           <div class="circle large">
-            <img src="./src/asset/wedding-3.jpg" alt="" />
+            <img src="./src/asset/full3.jpg" alt="" />
             <div class="circle small">
-              <img src="./src/asset/wedding-3.jpg" alt="" />
+              <img src="./src/asset/full3.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -224,7 +235,7 @@
             <div class="col-lg-4 d-flex justify-content-center">
               <div class="card">
                 <div class="img-box">
-                  <img src="./src/asset/services-1.jpg" alt="" />
+                  <img src="./src/asset/potrait1.jpg" alt="" />
                 </div>
                 <div class="details">
                   <h4>Wedding Plan</h4>
@@ -242,7 +253,7 @@
             <div class="col-lg-4 d-flex justify-content-center">
               <div class="card">
                 <div class="img-box">
-                  <img src="./src/asset/services-2.jpg" alt="" />
+                  <img src="./src/asset/potrait3.jpg" alt="" />
                 </div>
                 <div class="details">
                   <h4>Ceremony</h4>
@@ -260,7 +271,7 @@
             <div class="col-lg-4 d-flex justify-content-center">
               <div class="card">
                 <div class="img-box">
-                  <img src="./src/asset/services-3.jpg" alt="" />
+                  <img src="./src/asset/potrait5.jpg" alt="" />
                 </div>
                 <div class="details">
                   <h4>Honeymoon</h4>
