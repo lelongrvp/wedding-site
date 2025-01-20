@@ -1,0 +1,4 @@
+{
+  "**/*.{js,jsx}": ["npx prettier --write"],
+  "**/*.{json,css,scss,md}": ["npx prettier --write"]
+}
