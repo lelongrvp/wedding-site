@@ -15,9 +15,6 @@
     "vite": "^6.0.5"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3",
-    "glightbox": "^3.3.0",
-    "husky": "^9.1.7",
-    "isotope-layout": "^3.0.6"
+    "husky": "^9.1.7"
   }
 }
